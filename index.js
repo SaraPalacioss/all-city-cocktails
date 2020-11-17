@@ -1,22 +1,17 @@
-// index.js
-const country = document.getElementById("theInput").value;
-const restCountriesApi = axios.create({
-    baseURL: `https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=${country}`
-  });
-   
-  function getCountryInfo(theName) {
-    restCountriesApi
-      .get(theName)
-      .then(responseFromAPI => {
-        console.log("Response from API is: ", responseFromAPI.data);
-      })
-      .catch(err => {
-        console.log("Error is: ", err);
-      });
+  function getByName()
+  {
+    const name = document.getElementById("theInput").value;
+    axios.get('https://www.thecocktaildb.com/api/json/v2/9973533/search.php?s=' + name)
+       .then(function (response) {
+           for(let i=0;i<(response.data.drinks).length; i++){
+               console.log(response.data.drinks[i])
+           }
+       })
+       .catch(function (error) {
+        console.log(error);
+       })
+       .then(function () {
+       });
   }
-   
-  document.getElementById("theButton").onclick = function() {
-   
-    getCountryInfo(country);
-  };
+ 
 

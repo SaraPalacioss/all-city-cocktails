@@ -5,24 +5,11 @@ const Schema = mongoose.Schema;
 const cocktailSchema = new Schema({
     idDrink: {type: String},
     strDrink: {type: String},
-    strDrinkAlternate: {type: String},
-    strDrinkES: {type: String},
-    strDrinkDE: {type: String},
-    strDrinkFR: {type: String},
-    strDrinkZH-HANS: {type: String},
-    strDrinkZH-HANT: {type: String},
     strTags: {type: String},
-    strVideo: {type: String},
     strCategory: {type: String},
-    strIBA: {type: String},
     strAlcoholic: {type: String},
     strGlass: {type: String},
     strInstructions: {type: String},
-    strInstructionsES: {type: String},
-    strInstructionsDE: {type: String},
-    strInstructionsFR: {type: String},
-    strInstructionsZH-HANS: {type: String},
-    strInstructionsZH-HANT: {type: String},
     strDrinkThumb: {type: String},
     strIngredient1: {type: String},
     strIngredient2: {type: String},
@@ -54,11 +41,10 @@ const cocktailSchema = new Schema({
     strMeasure13: {type: String},
     strMeasure14: {type: String},
     strMeasure15: {type: String},
-    strCreativeCommonsConfirmed: {type: String},
     dateModified: {type: Date}
 });
 
-const Cocktail = mongoose.model('Movie', cocktailSchema);
+const Cocktail = mongoose.model('Cocktail', cocktailSchema);
 
 module.exports = Cocktail;
 
